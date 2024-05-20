@@ -1,0 +1,39 @@
+parm sys_now.prmtop
+trajin prod_nopbc.nc
+distance distance_29-561 :29&!@H= :561&!@H= out distance_29-561.out
+distance distance_30-561 :30&!@H= :561&!@H= out distance_30-561.out
+distance distance_31-561 :31&!@H= :561&!@H= out distance_31-561.out
+distance distance_32-561 :32&!@H= :561&!@H= out distance_32-561.out
+distance distance_33-561 :33&!@H= :561&!@H= out distance_33-561.out
+distance distance_146-561 :146&!@H= :561&!@H= out distance_146-561.out
+distance distance_235-561 :235&!@H= :561&!@H= out distance_235-561.out
+distance distance_238-561 :238&!@H= :561&!@H= out distance_238-561.out
+distance distance_240-561 :240&!@H= :561&!@H= out distance_240-561.out
+distance distance_243-561 :243&!@H= :561&!@H= out distance_243-561.out
+distance distance_304-561 :304&!@H= :561&!@H= out distance_304-561.out
+distance distance_307-561 :307&!@H= :561&!@H= out distance_307-561.out
+distance distance_318-561 :318&!@H= :561&!@H= out distance_318-561.out
+distance distance_319-561 :319&!@H= :561&!@H= out distance_319-561.out
+distance distance_320-561 :320&!@H= :561&!@H= out distance_320-561.out
+distance distance_322-561 :322&!@H= :561&!@H= out distance_322-561.out
+distance distance_324-561 :324&!@H= :561&!@H= out distance_324-561.out
+nativecontacts :29&!@H= :561&!@H= mindist out mindist_29-561.out
+nativecontacts :30&!@H= :561&!@H= mindist out mindist_30-561.out
+nativecontacts :31&!@H= :561&!@H= mindist out mindist_31-561.out
+nativecontacts :32&!@H= :561&!@H= mindist out mindist_32-561.out
+nativecontacts :33&!@H= :561&!@H= mindist out mindist_33-561.out
+nativecontacts :146&!@H= :561&!@H= mindist out mindist_146-561.out
+nativecontacts :235&!@H= :561&!@H= mindist out mindist_235-561.out
+nativecontacts :238&!@H= :561&!@H= mindist out mindist_238-561.out
+nativecontacts :240&!@H= :561&!@H= mindist out mindist_240-561.out
+nativecontacts :243&!@H= :561&!@H= mindist out mindist_243-561.out
+nativecontacts :304&!@H= :561&!@H= mindist out mindist_304-561.out
+nativecontacts :307&!@H= :561&!@H= mindist out mindist_307-561.out
+nativecontacts :318&!@H= :561&!@H= mindist out mindist_318-561.out
+nativecontacts :319&!@H= :561&!@H= mindist out mindist_319-561.out
+nativecontacts :320&!@H= :561&!@H= mindist out mindist_320-561.out
+nativecontacts :322&!@H= :561&!@H= mindist out mindist_322-561.out
+nativecontacts :324&!@H= :561&!@H= mindist out mindist_324-561.out
+run
+quit
+

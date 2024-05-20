@@ -1,0 +1,12 @@
+parm sys_now.prmtop
+reference sys_now.rst7 [REF]
+trajin prod_nopbc.nc
+rms first out rmsd_CA.out :1-559@CA
+rms first out rmsd_BD.out :1-559@N,CA,C,O
+rms first out rmsd_NH.out :1-559&!@H=
+
+rms REF out rmsd_CA_ref.out :1-559@CA
+rms out rmsd_BD_ref.out :1-559@N,CA,C,O
+rms out rmsd_NH_ref.out :1-559&!@H=
+run
+quit

@@ -1,0 +1,39 @@
+
+HIS
+resid	H++	pdb2pqr	schrodinger	select
+178	HIP	HID	HIE		HIE
+199 	HIE	HID	HID		HID
+220	HIP	HID	HID		HID
+222	HIE	HID	HIE		HIE
+228	HIE	HID	HID		HID
+280	HIE	HID	HIE		HIE
+296	HIE	HID	HID		HID
+370	HIP	HID	HID		HID
+372	HIP	HID	HID		HID
+441	HIE	HID	HID		HID
+598	HIE	HIE	HIE		HIE
+599	HID	HID	HIE		HID
+613	HIE	HIE	HIE		HIE
+
+CYS 176-185
+
+DPPC DOPC CHL1 
+0.55:0.15:0.30
+
+
+conda activate AmberTools22
+packmol-memgen --available_lipids 
+
+packmol-memgen --pdb NET_LDP_prep_replace.pdb --lipids DPPC:DOPC:CHL1 --ratio 55:15:30 --parametrize --keepligs --ligand_param LDP.frcmod:LDP.lib --gaff2 --ffprot ff19SB --fflip lipid21 --ffwat opc --salt --salt_c Na+ --notprotonate
+packmol-memgen --pdb NET_LNR_prep_align.pdb --lipids DPPC:DOPC:CHL1 --ratio 55:15:30 --parametrize --keepligs --ligand_param LNR.frcmod:LNR.lib --gaff2 --ffprot ff19SB --fflip lipid21 --ffwat opc --salt --salt_c Na+ --notprotonate
+
+--preoriented # noOPM
+--notprotonate # H++
+--nottrim # del H
+
+tleap -f leap.in
+
+
+
+
+

@@ -1,0 +1,8 @@
+parm ../../../sys.prmtop
+trajin ../../../prod.nc
+trajin ../../../prod2.nc
+autoimage :1-599&!@H=
+rms first :1-599&!@H=
+trajout prod_nopbc.nc nobox
+run
+quit

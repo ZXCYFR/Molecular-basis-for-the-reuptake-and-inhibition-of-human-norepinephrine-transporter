@@ -1,0 +1,21 @@
+parm sys_now.prmtop
+reference sys_now.rst7 [REF]
+trajin prod_nopbc.nc
+rms REF
+average crdset MyAvg
+run
+rms ref MyAvg
+atomicfluct out rmsf_all.out :1-559@CA
+run
+
+clear all
+parm sys_now.prmtop
+reference sys_now.rst7 [REF]
+trajin prod_lasthalf.nc
+rms REF
+average crdset MyAvg
+run
+rms ref MyAvg
+atomicfluct out rmsf_lasthalf.out :1-559@CA
+run
+quit

@@ -1,0 +1,29 @@
+parm ../sys.prmtop
+reference ../sys.rst7 [REF]
+trajin ../prod.nc
+trajin ../prod2.nc
+strip :PA,PC,OL,CHL,WAT,Na+,Cl-
+autoimage :1-561@CA
+rms REF :1-561@CA
+trajout prod_nopbc.nc nobox
+run
+
+clear all
+parm ../sys.prmtop
+trajin ../sys.rst7
+strip :PA,PC,OL,CHL,WAT,Na+,Cl-
+trajout sys_now.rst7 nobox
+run
+
+clear all
+parm ../sys.prmtop
+parmstrip :PA,PC,OL,CHL,WAT,Na+,Cl-
+parmwrite out sys_now.prmtop
+run
+
+clear all
+parm sys_now.prmtop
+trajin prod_nopbc.nc
+trajout prod_lasthalf.nc nobox onlyframes 3001-5000
+run
+quit

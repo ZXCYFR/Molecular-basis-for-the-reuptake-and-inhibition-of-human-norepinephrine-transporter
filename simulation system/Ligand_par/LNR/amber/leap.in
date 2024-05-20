@@ -1,0 +1,8 @@
+source leaprc.gaff2
+LNR=loadmol2 LNR.mol2
+check LNR
+loadamberparams LNR.frcmod
+check LNR
+saveoff LNR LNR.lib 
+saveamberparm LNR LNR.prmtop LNR.inpcrd
+quit

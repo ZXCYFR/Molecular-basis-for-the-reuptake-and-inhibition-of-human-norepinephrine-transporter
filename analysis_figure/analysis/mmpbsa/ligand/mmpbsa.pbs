@@ -1,0 +1,18 @@
+#!/bin/sh
+#PBS -N mmpbsa
+#PBS -l nodes=1:ppn=20
+#PBS -q batchPAR
+#PBS -V
+#PBS -S /bin/bash
+
+source /opt/intel/compilers_and_libraries_2018/linux/bin/compilervars.sh
+source /opt/intel/mkl/bin/mklvars.sh
+source /opt/intel/impi/2018.1.163/bin64/mpivars.sh
+#export DO_PARALLEL="mpirun -np 16"
+#export CUDA_VISIBLE_DEVICES=7
+
+cd $PBS_O_WORKDIR
+source activate
+conda activate gmxMMPBSA
+mpirun -np 20 gmx_MMPBSA -O -i mmpbsa.in -cs ../sys.pdb -ci ../index.ndx -cg 1 33 -ct ../prod.xtc -lm ../LDP.mol2 -o FINAL_RESULTS_MMPBSA.dat -eo FINAL_RESULTS_MMPBSA.csv -nogui
+

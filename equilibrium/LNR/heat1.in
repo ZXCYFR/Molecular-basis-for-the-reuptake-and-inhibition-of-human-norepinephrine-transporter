@@ -1,0 +1,44 @@
+Heating 100K
+ &cntrl
+  imin=0,         ! Molecular dynamics
+  ntx=1,          ! Positions read formatted with no initial velocities
+  irest=0,        ! No restart
+  ntc=2,          ! SHAKE on for bonds with hydrogen
+  ntf=2,          ! No force evaluation for bonds with hydrogen
+  nstlim=25000,    ! Number of MD steps
+  ntt=3,          ! Langevin thermostat
+  gamma_ln=1.0,   ! Collision frequency for Langevin thermostat
+  ntr=1,          ! Restrain atoms using a harmonic potential
+                  ! (See the GROUP input below)
+  ig=-1,          ! Random seed for Langevin thermostat
+  ntpr=100,
+  ntwr=2500,
+  ntwx=2500,       ! Write to trajectory file every ntwx steps
+  dt=0.002,       ! Timestep (ps)
+  nmropt=1,       ! NMR restraints will be read (See TEMP0 control below)
+  ntb=1,
+  ntp=0,
+  cut=10.0,
+  ioutfm=1,       ! Write a binary (netcdf) trajectory
+  ntxo=2,         ! Write binary restart files
+  nscm=0,
+ &end
+ &ewald
+  skinnb=5
+ &end
+ &wt 
+  type='TEMP0',   ! Varies the target temperature TEMP0
+  istep1=0,       ! Initial step
+  istep2=25000,   ! Final step
+  value1=0.0,     ! Initial temp0 (K)
+  value2=100.0 /  ! final temp0 (K)
+ &wt type='END' / ! End of varying conditions
+First restraint group
+10.0
+RES 1 559  560 561  1596 1596  1665 1669
+END
+Second restraint group,
+10.0
+RES 562 1527
+END
+END

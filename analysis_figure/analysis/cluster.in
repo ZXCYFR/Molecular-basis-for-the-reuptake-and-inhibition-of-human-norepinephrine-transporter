@@ -1,0 +1,7 @@
+parm sys_now.prmtop
+reference sys_now.rst7 [REF]
+trajin prod_nopbc.nc 3001 5000
+rms REF :1-559@N,CA,C,O
+cluster c2 kmeans clusters 10 randompoint maxit 500 rms :1-559&!@H= nofit sieve 10 random out cnumvtime.dat summary summary.dat info info.dat cpopvtime cpopvtime.agr normframe repout rep repfmt pdb
+run
+quit

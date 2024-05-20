@@ -1,0 +1,29 @@
+Production 300K 100ns
+ &cntrl
+  imin=0,          ! Molecular dynamics
+  ntx=5,           ! Positions and velocities read formatted
+  irest=1,         ! Restart calculation
+  ntc=2,           ! SHAKE on for bonds with hydrogen
+  ntf=2,           ! No force evaluation for bonds with hydrogen
+  nstlim=50000000,  ! Number of MD steps
+  ntt=3,           ! Langevin thermostat
+  gamma_ln=1.0,    ! Collision frequency for thermostat
+  temp0=300.0,     ! Simulation temperature (K)
+  ntpr=5000,       ! Print to mdout every ntpr steps
+  ntwr=50000,       ! Write a restart file every ntwr steps
+  ntwx=50000,       ! Write to trajectory file every ntwc steps
+  dt=0.002,        ! Timestep (ps)
+  ig=-1,           ! Random seed for Langevin thermostat
+  ntb=2,           ! Constant pressure periodic boundary conditions
+  ntp=2,           ! Anisotropic pressure coupling
+  cut=10.0,        ! Nonbonded cutoff (Angstroms)
+  ioutfm=1,        ! Write binary NetCDF trajectory
+  ntxo=2,          ! Write binary restart file
+  ntr=1,
+  restraint_wt=10.0,
+  restraintmask='(:1-559,560-561,1582,1650-1654&!@H=)',
+ &end
+ &ewald
+  skinnb = 5,
+ &end
+ /

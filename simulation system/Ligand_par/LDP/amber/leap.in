@@ -1,0 +1,8 @@
+source leaprc.gaff2
+LDP=loadmol2 LDP.mol2
+check LDP
+loadamberparams LDP.frcmod
+check LDP
+saveoff LDP LDP.lib 
+saveamberparm LDP LDP.prmtop LDP.inpcrd
+quit

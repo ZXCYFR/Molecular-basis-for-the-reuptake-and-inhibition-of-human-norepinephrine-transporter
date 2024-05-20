@@ -1,0 +1,3 @@
+# rst to pdb
+# example
+ambpdb -p sys.prmtop -c prod.rst > prod.pdb

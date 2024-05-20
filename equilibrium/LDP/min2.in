@@ -1,0 +1,17 @@
+Secondary minimization of water with harmonic restraints on the rest (5 kcal/molA2)
+ &cntrl
+  nmropt = 0,
+  imin = 1,
+  ntr = 1,
+  maxcyc = 10000,
+  ncyc = 5000,
+ &end
+First restraint group
+10.0
+RES 1 559  560 561  1582 1582  1650 1654
+END
+Second restraint group,
+10.0
+RES 562 1514
+END
+END

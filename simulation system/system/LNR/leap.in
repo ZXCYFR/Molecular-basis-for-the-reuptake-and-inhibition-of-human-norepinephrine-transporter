@@ -1,0 +1,19 @@
+source leaprc.protein.ff19SB
+source leaprc.lipid21
+source leaprc.gaff2
+source leaprc.water.opc
+
+loadamberparams LNR.frcmod
+loadoff LNR.lib
+
+SYS = loadpdb bilayer_NET_LNR_prep_align.pdb 
+setBox SYS vdw
+
+charge SYS
+addionsrand SYS Na+ 0
+addionsrand SYS Cl- 2
+charge SYS
+
+saveamberparm SYS sys.prmtop sys.rst7 
+savepdb SYS sys.pdb
+quit
